@@ -1,0 +1,24 @@
+<div draggable="true" ngClass="{{dragAreaClass}}">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            Drag File Here
+            <a href="javascript:void(0)" (click)="file.click()">
+                or Click to Open
+            </a>
+            <input type="file"
+                   #file
+                   [multiple]="false"
+                   (change)="onFileChange($event)"
+                   style="display:none" 
+                   accept=".txt, .csv"/>
+            <div class="dragged-files-wrapper" *ngIf="draggedFiles">
+                <div class="file" *ngFor="let file of draggedFiles">
+                    File Name : {{file.name}}
+                </div>
+            </div>        
+        </div>
+        <div class="error" *ngIf="error">
+            Only one file at time allow
+        </div>
+    </div>
+</div>

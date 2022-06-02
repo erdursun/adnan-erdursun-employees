@@ -1,0 +1,18 @@
+.error {
+    color: #f00;
+}
+
+.dragarea {
+    
+    border: 0px solid #bbb;
+    padding: 1.5rem;
+    color: rgb(145, 145, 145);
+}
+
+.droparea {
+  
+  border: 1px dashed #bbb;
+  padding: 1.5rem;
+  background-color: #eff;
+  color: rgb(91, 91, 91);
+}
