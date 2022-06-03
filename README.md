@@ -1,9 +1,7 @@
 # About The Project
-
 This project has been developed for an assigment example for interviews:
 
-
-# The Task :
+## The Task 
 Pair of employees who have worked together
 
 Create an application that identifies the pair of employees who have worked together on common projects for the longest period of time.
@@ -35,15 +33,15 @@ Sample output:
 
 
 # Project Details
-
 The program is a one page, standalone Angular application. 
 * Reading data from a text file which is draged or choosed from your computer.
- ```If it is not work the firs time you upload, please try again. :)```. 
+
+ ```If it is not work the firs time you upload, please try again. :)```
+
 * Calculates longest overlap and display the pair ( the team ) which has longest total overlap on each projects for the longest time.
 
 ## Getting Started
 ### Application is supposed to be run over Node.js platform
-
 * Clone repository: using client for the Git version control system. [TortoiseGit](https://tortoisegit.org/)
 * Import the project to your IDE
 * Install/Setup the Node.js for executing ```ng serve``` command in the project ```root```directory
@@ -56,25 +54,20 @@ The program is a one page, standalone Angular application.
 https://github.com/erdursun/adnan-erdursun-employees.git
 ```
 ## Technologies
-
 * Angular - [Angular 13](https://blog.angular.io/angular-v13-is-now-available-cce66f7bc296)
 * Node.js - [Node.js 16.15.1](https://nodejs.org/en/)
 
 ## IDE 
-
 * Visual Studio Code - [VS Code](https://code.visualstudio.com/)
 
 ## Version
-
 1.3-SNAPSHOT
 
 ## Author
-
 **Adnan Erdursun** 
 * [GitHub](https://github.com/erdursun)
 * [LinkedIn](https://www.linkedin.com/in/erdursun/)
 * [Twitter](https://www.twitter.com/AdnanErdursun/)
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
