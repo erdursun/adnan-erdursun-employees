@@ -1,27 +1,85 @@
-# AdnanErdursunEmployees
+# About The Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+This project has been developed for an assigment example for interviews:
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# The Task :
+Pair of employees who have worked together
 
-## Code scaffolding
+Create an application that identifies the pair of employees who have worked together on common projects for the longest period of time.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Input data:
+A CSV file with data in the following format:
+ ```EmpID, ProjectID, DateFrom, DateTo```
 
-## Build
+Example data: 
+   ```
+      143, 12, 2013-11-01, 2014-01-05
+      218, 10, 2012-05-16, NULL
+      143, 10, 2009-01-01, 2011-04-27
+      ...
+   ```
+Output format:
+ ```EmployeeID_1, EmployeeID_2, ProjectID, TotalDays```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Sample output: 
+```
+      143, 143, 218, 8
+      ...
+```
 
-## Running unit tests
+# Assignment Guide
+* The input data must be loaded to the program from a CSV file
+* DateTo can accept value „NULL“ (this is equal to „Today“).
+* The program have to be started without the need to do any code changes, after “checkout” on the code and import in IDE with Node.js platform
+* The program is a one page, standalone Angular application.
+* Comply with the “code convention”, depending on the programming language:
+   a. Java - (http://www.oracle.com/technetwork/java/codeconvtoc-136057.html )
+* The solution to the problem to be put in github
+      a. Repository Name to be „FirstName-LastName-employees (example: ivan-ivanov-employess)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+# Project Details
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The program is a one page, standalone Angular application. 
+* Reading data from a text file which is draged or choosed from your computer.
+ ```If it is not work the firs time you upload, please try again. :)```. 
+* Calculates longest overlap and display the pair ( the team ) which has longest total overlap on each projects for the longest time.
 
-## Further help
+## Getting Started
+### Application is supposed to be run over Node.js platform
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Clone repository: using client for the Git version control system. [TortoiseGit](https://tortoisegit.org/)
+* Import the project to your IDE
+* Install/Setup the Node.js for executing ```ng serve``` command in the project ```root```directory
+* Use [Adroid 13](https://blog.angular.io/angular-v13-is-now-available-cce66f7bc296)
+* The text file with the data have to be prepared before upload to the program in the following format:
+ ```EmpID, ProjectID, DateFrom, DateTo```
+
+#### Repository URL
+```
+https://github.com/erdursun/adnan-erdursun-employees.git
+```
+## Technologies
+
+* Angular - [Angular 13](https://blog.angular.io/angular-v13-is-now-available-cce66f7bc296)
+* Node.js - [Node.js 16.15.1](https://nodejs.org/en/)
+
+## IDE 
+
+* Visual Studio Code - [VS Code](https://code.visualstudio.com/)
+
+## Version
+
+1.3-SNAPSHOT
+
+## Author
+
+**Adnan Erdursun** 
+* [GitHub](https://github.com/erdursun)
+* [LinkedIn](https://www.linkedin.com/in/erdursun/)
+* [Twitter](https://www.twitter.com/AdnanErdursun/)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
