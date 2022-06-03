@@ -30,13 +30,8 @@ Sample output:
 
 # Assignment Guide
 * The input data must be loaded to the program from a CSV file
-* DateTo can accept value „NULL“ (this is equal to „Today“).
+* DateTo can accept value "NULL“ (this is equal to "Today“).
 * The program have to be started without the need to do any code changes, after “checkout” on the code and import in IDE with Node.js platform
-* The program is a one page, standalone Angular application.
-* Comply with the “code convention”, depending on the programming language:
-   a. Java - (http://www.oracle.com/technetwork/java/codeconvtoc-136057.html )
-* The solution to the problem to be put in github
-      a. Repository Name to be „FirstName-LastName-employees (example: ivan-ivanov-employess)
 
 
 # Project Details
