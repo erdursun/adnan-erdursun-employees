@@ -73,39 +73,29 @@
 
   <!-- Resources -->
   <h2>Resources</h2>
-  <p>Please select one of the source file or upload your own:</p>
-  <input type="hidden" #selection>
-  <div class="card-container">
-    <button class="card" (click)="selection.value = 'example_1'" tabindex="0" rel="noopener" >
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-      <span>Example File 1</span>
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>    
-    </button>
-
-    <button class="card" (click)="selection.value = 'example_2'" tabindex="0" rel="noopener" >
-      <svg xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px" width="21.813" height="23.453" viewBox="0 0 21.813 23.453"><path d="M4099.584,972.736h0l-10.882,3.9,1.637,14.4,9.245,5.153,9.245-5.153,1.686-14.4Z" transform="translate(-4088.702 -972.736)" fill="#808080"/><path d="M4181.516,972.736v23.453l9.245-5.153,1.686-14.4Z" transform="translate(-4170.633 -972.736)" fill="#808080"/><path d="M4137.529,1076.127l-7.7-3.723,4.417-2.721,7.753,3.723Z" transform="translate(-4125.003 -1058.315)" fill="#ffe0b2"/><path d="M4137.529,1051.705l-7.7-3.723,4.417-2.721,7.753,3.723Z" transform="translate(-4125.003 -1036.757)" fill="#fff3e0"/><path d="M4137.529,1027.283l-7.7-3.723,4.417-2.721,7.753,3.723Z" transform="translate(-4125.003 -1015.199)" fill="#fff"/></svg>
-      <span>Example File 2</span>
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-    </button>
-  </div>
+  <p>Please upload a cvs or txt file that contains the data :</p>
+  <p>&nbsp;</p>
+  <app-dragable-file class="card" style="width: 500px" 
+     (fileDropped)="fileChanged($event); selection.value = 'user_file' "
+     (fileChanged)="fileChanged($event); selection.value = 'user_file' ">
+  </app-dragable-file>
 
   <h2>The result will be generated below</h2>
 
-  <input type="hidden" #selection>
   
-  <table mat-table width="70%">
+  <table mat-table width="70%" style="border: 1px dashed">
     <thead>
-        <th>Employee#1</th>
-        <th>Employee#2</th>
-        <th>CommonProjectID</th>
-        <th>DaysWorked</th>
+        <th align="center">Employee#1</th>
+        <th align="center">Employee#2</th>
+        <th align="center">CommonProjectID</th>
+        <th align="center">DaysWorked</th>
     </thead>
     <tbody>
         <tr *ngFor="let team of finalTeams">
-            <td>{{team.member1.employeeID}}</td>
-            <td>{{team.member2.employeeID}}</td>
-            <td>{{team.projectID}}</td>
-            <td>{{team.totalDays}}</td>
+            <td align="center">{{team.member1.employeeID}}</td>
+            <td align="center">{{team.member2.employeeID}}</td>
+            <td align="center">{{team.projectID}}</td>
+            <td align="center">{{team.totalDays}}</td>
         </tr>
     </tbody>
 </table>
@@ -113,30 +103,27 @@
  
   <!-- Buttons -->
   <div class="card-container">
-    <button class="circle-link" title="Submit" rel="noopener" (click)="onClick($event)">
+    <button type="submit" class="circle-link" title="Submit" rel="noopener" (click)="onClickSubmit($event)">
       <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="2 1 24 24">
         <title>Submit</title>
         <path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/>
       </svg>
     </button>
 
-    <a class="circle-link" title="Clear" href="#" rel="noopener">
+    <button type="reset" class="circle-link" title="Clear" rel="noopener" (click)="onClickReset($event)">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <title>Cancel</title>
         <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 16.538l-4.592-4.548 4.546-4.587-1.416-1.403-4.545 4.589-4.588-4.543-1.405 1.405 4.593 4.552-4.547 4.592 1.405 1.405 4.555-4.596 4.591 4.55 1.403-1.416z"/>
       </svg>
-    </a>
+    </button>
   </div>
 
   <!-- Console -->
   <p> - - - - - - - -</p>
-  <div class="card-container">
-    <app-dragable-file class="card" style="width: 500px" (fileChanged)="fileChanged($event); selection.value = 'user_file' "></app-dragable-file>
-
+  <input type="hidden" #selection>
+  <div class="card-container" style="width: 500px;">
     <div class="terminal" [ngSwitch]="selection.value">
       <pre *ngSwitchDefault>File content will be displayed here..</pre>
-      <pre *ngSwitchCase="'example_1'"> example_1 </pre>
-      <pre *ngSwitchCase="'example_2'"> example_2 </pre>
       <pre *ngSwitchCase="'user_file'"> {{displayableData}} </pre>
     </div>
   </div>

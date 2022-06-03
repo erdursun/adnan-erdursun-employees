@@ -1,16 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Project } from './entities/Project';
 import { ProjectEmployee } from './entities/ProjectEmployee';
+import { catchError } from 'rxjs';
 
+/* This class is a utiliy service that contains the commonly required medthod and variables*/
 @Injectable({
   providedIn: 'root'
 })
 export class UtilityService {
 
+  /* The source file that contains the data */
   inputFile!: File;
   constructor() { 
   }
 
+/**
+ * It takes a file, reads it, and returns an array of strings
+ * @param {File} file - File - the file that you want to parse
+ * @returns A promise that resolves to an array of strings.
+ */
   cvsFileParser(file: File){
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -28,6 +36,13 @@ export class UtilityService {
     });
   }
 
+/**
+ * It takes an array of strings, each string containing 4 comma separated values, and returns an array
+ * of Project objects, each Project object containing an array of ProjectEmployee objects
+ * @param {string[]} array - string[] - the array of strings to be converted to an array of Project
+ * objects
+ * @returns An array of Project objects.
+ */
   arrayToProject(array: string[]){
     let result: Array<Project> = new Array();
     for (let i = 0; i < array.length; i++) {
@@ -51,45 +66,26 @@ export class UtilityService {
     
   }
 
-  fileToArray(file: File, spliter = ",") {
-    let reader = new FileReader();
-    let arr: String[] = [];
-    reader.onload = (e: any) => {
-      let str = e.target.result;
-      arr = str.split(spliter);
-    };
-    reader.readAsText(file);
-    return arr;
-  } 
-
-  fileToStr(file: File) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = (e: any) => {
-        resolve(e.target.result);
-      };
-      reader.readAsText(file);
-    });
-  }
-
-  fileToString(file: File) {
-    let reader = new FileReader();
-    let str = "";
-    reader.onload = (e: any) => {
-      str = e.target.result;
-    };
-    reader.readAsText(file);
-    return str;
-  }
-
-
+/**
+ * It returns true if the first character of the string is a number
+ * @param {string} str - The string to be tested.
+ * @returns function isFirstCharIsNumber(str) {
+ *     return /^\d/.test(str);
+ *   }
+ */
   isFirstCharIsNumber(str: string) {
     return /^\d/.test(str);
   }
 
+/**
+ * It returns true if the first character of the string is a letter, and false otherwise
+ * @param {string} str - The string to be tested.
+ * @returns isFirstCharIsAlpha(str: string) {
+ *     return /^[a-zA-Z]/.test(str);
+ *   }
+ */
   isFirstCharIsAlpha(str: string) {
     return /^[a-zA-Z]/.test(str);
   }
 
- 
 }
